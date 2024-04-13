@@ -1,120 +1,65 @@
 import React from "react";
+import logo from "../assets/logo.png";
 
 function Nav() {
 	return (
 		<div>
-			<div className="navbar bg-base-100">
-				<div className="navbar-start">
-					<div className="dropdown">
-						<div tabIndex={0} role="button" className="btn btn-ghost md:hidden">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								className="h-5 w-5"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke="currentColor"
+			<div className="drawer-end">
+				<input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+				<div className="drawer-content flex flex-col">
+					<div className="w-full navbar bg-base-300 flex flex-row-reverse">
+						<div className="flex-none lg:hidden">
+							<label
+								htmlFor="my-drawer-3"
+								aria-label="open sidebar"
+								className="btn btn-square btn-ghost"
 							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M4 6h16M4 12h8m-8 6h16"
-								/>
-							</svg>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									fill="none"
+									viewBox="0 0 24 24"
+									className="inline-block w-6 h-6 stroke-current"
+								>
+									<path
+										strokeLinecap="round"
+										strokeLinejoin="round"
+										strokeWidth="2"
+										d="M4 6h16M4 12h16M4 18h16"
+									></path>
+								</svg>
+							</label>
 						</div>
-						<ul
-							tabIndex={0}
-							className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-						>
-							<li>
-								<details>
-									<summary className="text-lg">Info</summary>
-									<ul className="p-2">
-										<li>
-											<a className="text-lg">About</a>
-										</li>
-										<li>
-											<a className="text-lg">FAQ</a>
-										</li>
-										<li>
-											<a className="text-lg">Contact</a>
-										</li>
-									</ul>
-								</details>
-							</li>
-							<li>
-								<details>
-									<summary className="text-lg">Rooms</summary>
-									<ul className="p-2">
-										<li>
-											<a className="text-lg">All Rooms</a>
-										</li>
-										<li>
-											<a className="text-lg">Champa Rooms</a>
-										</li>
-										<li>
-											<a className="text-lg">Blake Rooms</a>
-										</li>
-									</ul>
-								</details>
-							</li>
-							<li>
-								<a className="text-lg">Team Building</a>
-							</li>
-							<li>
-								<a className="text-lg">Gift Cards</a>
-							</li>
-							<a className="btn btn-primary md:hidden">Book Now!</a>
-						</ul>
+						<img className="w-24" src={logo} alt="Escapeworks denver"></img>
+						<div className="flex-none hidden lg:block">
+							<ul className="menu menu-horizontal">
+								{/* Navbar menu content here */}
+								<li>
+									<a>Navbar Item 1</a>
+								</li>
+								<li>
+									<a>Navbar Item 2</a>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<a className="btn btn-ghost text-3xl">EscapeWorks</a>
+					{/* Page content here */}
+					Content
 				</div>
-				<div className="navbar-center hidden md:flex">
-					<ul className="menu menu-horizontal px-1">
+				<div className="drawer-side">
+					<label
+						htmlFor="my-drawer-3"
+						aria-label="close sidebar"
+						className="drawer-overlay"
+					></label>
+					<ul className="menu p-4 w-80 min-h-full bg-base-200">
+						{/* Sidebar content here */}
 						<li>
-							<details>
-								<summary className="text-xl">Info</summary>
-								<ul className="p-2 bg-secondary">
-									<li>
-										<a className="text-xl">About</a>
-									</li>
-									<li>
-										<a className="text-xl">FAQ</a>
-									</li>
-									<li>
-										<a className="text-xl">Contact</a>
-									</li>
-								</ul>
-							</details>
+							<a>Sidebar Item 1</a>
 						</li>
 						<li>
-							<details>
-								<summary className="text-xl">Rooms</summary>
-								<ul className="p-2 bg-secondary">
-									<li>
-										<a className="text-xl">All Rooms</a>
-									</li>
-									<li>
-										<a className="text-xl">Champa Rooms</a>
-									</li>
-									<li>
-										<a className="text-xl">Blake Rooms</a>
-									</li>
-								</ul>
-							</details>
-						</li>
-						<li>
-							<a className="text-xl">Team Building</a>
-						</li>
-						<li>
-							<a className="text-xl">Gift Cards</a>
+							<a>Sidebar Item 2</a>
 						</li>
 					</ul>
-				</div>
-				<div className="navbar-end">
-					<a className="btn btn-primary max-sm:hidden mr-1 text-lg">
-						Book Now!
-					</a>
 				</div>
 			</div>
 		</div>
