@@ -1,26 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import logo from "../assets/logo.png";
+import BookingModal from "./booking-modal";
 
 function Nav() {
 	const navigate = useNavigate();
 
-	const handleLogoClick = () => {
-		navigate("/");
+	const [drawer, setDrawer] = useState(false);
+	const bookingModal = document.getElementById("booking-modal");
+
+	const handleLinkClick = (link) => {
+		navigate(`${link}`);
+		setDrawer(false);
+	};
+
+	const toggleDrawer = () => {
+		setDrawer(!drawer);
 	};
 
 	return (
 		<div>
 			<div className="drawer-end">
-				<input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
+				<input
+					id="navDrawer"
+					type="checkbox"
+					className="drawer-toggle"
+					checked={drawer}
+					onChange={toggleDrawer}
+				/>
 				<div className="drawer-content flex flex-col">
 					<div className="w-full navbar bg-base-300 flex max-lg:flex-row-reverse justify-between">
 						<div className="flex lg:hidden">
 							<label
-								htmlFor="my-drawer-3"
+								htmlFor="navDrawer"
 								aria-label="open sidebar"
 								className="btn btn-square btn-ghost"
+								onClick={() => setDrawer(false)}
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +58,7 @@ function Nav() {
 							src={logo}
 							alt="Escapeworks denver"
 							onClick={() => {
-								handleLogoClick();
+								handleLinkClick("/");
 							}}
 						></img>
 						<div className="flex-none hidden lg:block">
@@ -52,35 +68,50 @@ function Nav() {
 										<summary>Escape Rooms</summary>
 										<ul className="p-2 bg-primary rounded-t-none top-16">
 											<li>
-												<a>All Escape Rooms</a>
+												<a
+													className="text-nowrap"
+													onClick={() => handleLinkClick("/all-rooms")}
+												>
+													All Escape Rooms
+												</a>
 											</li>
 											<li>
-												<a>Denver</a>
+												<a onClick={() => handleLinkClick("/denver-rooms")}>
+													Denver
+												</a>
 											</li>
 											<li>
-												<a>Ballpark</a>
+												<a onClick={() => handleLinkClick("/ballpark-rooms")}>
+													Ballpark
+												</a>
 											</li>
 										</ul>
 									</details>
 								</li>
 								<li>
-									<a>Team Building</a>
+									<a onClick={() => handleLinkClick("/team-building")}>
+										Team Building
+									</a>
 								</li>
 								<li>
-									<a>Gift Cards</a>
+									<a onClick={() => handleLinkClick("gift-cards")}>
+										Gift Cards
+									</a>
 								</li>
 								<li>
 									<details>
 										<summary>Info</summary>
 										<ul className="p-2 bg-primary rounded-t-none top-16">
 											<li>
-												<a>About</a>
+												<a onClick={() => handleLinkClick("/about")}>About</a>
 											</li>
 											<li>
-												<a>FAQ</a>
+												<a onClick={() => handleLinkClick("/faq")}>FAQ</a>
 											</li>
 											<li>
-												<a>Contact</a>
+												<a onClick={() => handleLinkClick("/contact")}>
+													Contact
+												</a>
 											</li>
 										</ul>
 									</details>
@@ -88,7 +119,13 @@ function Nav() {
 							</ul>
 						</div>
 						<div className="max-lg:hidden">
-							<button className="btn btn-primary text-neutral text-2xl mr-5">
+							<button
+								className="btn btn-primary text-neutral text-2xl mr-5"
+								onClick={() => {
+									bookingModal.showModal();
+									setDrawer(false);
+								}}
+							>
 								Book Now
 							</button>
 						</div>
@@ -96,7 +133,7 @@ function Nav() {
 				</div>
 				<div className="drawer-side">
 					<label
-						htmlFor="my-drawer-3"
+						htmlFor="navDrawer"
 						aria-label="close sidebar"
 						className="drawer-overlay"
 					></label>
@@ -105,48 +142,65 @@ function Nav() {
 							<details>
 								<summary>Escape Rooms</summary>
 								<ul className="p-2 bg-primary rounded-t-none">
-									<li className="border border-red-700">
-										<a>All Escape Rooms</a>
+									<li>
+										<a onClick={() => handleLinkClick("/all-rooms")}>
+											All Escape Rooms
+										</a>
 									</li>
 									<li>
-										<a>Denver</a>
+										<a onClick={() => handleLinkClick("/denver-rooms")}>
+											Denver
+										</a>
 									</li>
 									<li>
-										<a>Ballpark</a>
+										<a onClick={() => handleLinkClick("/ballpark-rooms")}>
+											Ballpark
+										</a>
 									</li>
 								</ul>
 							</details>
 						</li>
 						<li>
-							<a>Team Building</a>
+							<a onClick={() => handleLinkClick("/team-building")}>
+								Team Building
+							</a>
 						</li>
 						<li>
-							<a>Gift Cards</a>
+							<a onClick={() => handleLinkClick("gift-cards")}>Gift Cards</a>
 						</li>
 						<li>
 							<details>
 								<summary>Info</summary>
 								<ul className="p-2 bg-primary rounded-t-none">
 									<li>
-										<a>About</a>
+										<a onClick={() => handleLinkClick("/about")}>About</a>
 									</li>
 									<li>
-										<a>FAQ</a>
+										<a onClick={() => handleLinkClick("/faq")}>FAQ</a>
 									</li>
 									<li>
-										<a>Contact</a>
+										<a onClick={() => handleLinkClick("/contact")}>Contact</a>
 									</li>
 								</ul>
 							</details>
 						</li>
 						<li>
-							<button className="btn btn-primary mt-5 text-neutral">
+							<button
+								className="btn btn-primary mt-5 text-neutral"
+								onClick={() => {
+									bookingModal.showModal();
+									setDrawer(false);
+								}}
+							>
 								Book Now
 							</button>
 						</li>
 					</ul>
 				</div>
 			</div>
+			<dialog id="booking-modal" className="modal modal-bottom sm:modal-middle">
+				<BookingModal />
+			</dialog>
 		</div>
 	);
 }
