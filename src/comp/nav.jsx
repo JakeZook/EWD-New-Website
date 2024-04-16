@@ -8,15 +8,28 @@ function Nav() {
 	const navigate = useNavigate();
 
 	const [drawer, setDrawer] = useState(false);
+	const [escapeRoomDropdownOpen, setEscapeRoomDropdownOpen] = useState(false);
+	const [infoDropdownOpen, setInfoDropdownOpen] = useState(false);
+
 	const bookingModal = document.getElementById("booking-modal");
 
 	const handleLinkClick = (link) => {
 		navigate(`${link}`);
 		setDrawer(false);
+		setEscapeRoomDropdownOpen(false);
+		setInfoDropdownOpen(false);
 	};
 
 	const toggleDrawer = () => {
 		setDrawer(!drawer);
+	};
+
+	const toggleEscapeRoomDropdown = () => {
+		setEscapeRoomDropdownOpen(!escapeRoomDropdownOpen);
+	};
+
+	const toggleInfoDropdown = () => {
+		setInfoDropdownOpen(!infoDropdownOpen);
 	};
 
 	return (
@@ -63,30 +76,38 @@ function Nav() {
 						></img>
 						<div className="flex-none hidden lg:block">
 							<ul className="menu menu-horizontal items-center text-neutral text-xl">
-								<li>
-									<details>
-										<summary>Escape Rooms</summary>
-										<ul className="p-2 bg-primary rounded-t-none top-16">
+								<li
+									className="dropdown dropdown-hover"
+									onMouseLeave={() => setEscapeRoomDropdownOpen(false)}
+								>
+									<div
+										tabIndex={0}
+										role="button"
+										className="btn bg-base-300 border-none text-xl"
+										onClick={toggleEscapeRoomDropdown}
+										onMouseEnter={() => setEscapeRoomDropdownOpen(true)}
+									>
+										Escape Rooms
+									</div>
+									{escapeRoomDropdownOpen && (
+										<ul className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box w-52">
 											<li>
-												<a
-													className="text-nowrap"
-													onClick={() => handleLinkClick("/all-rooms")}
-												>
+												<a onClick={() => handleLinkClick("/all-rooms")}>
 													All Escape Rooms
 												</a>
 											</li>
 											<li>
 												<a onClick={() => handleLinkClick("/denver-rooms")}>
-													Denver
+													Denver Rooms
 												</a>
 											</li>
 											<li>
 												<a onClick={() => handleLinkClick("/ballpark-rooms")}>
-													Ballpark
+													Ballpark Rooms
 												</a>
 											</li>
 										</ul>
-									</details>
+									)}
 								</li>
 								<li>
 									<a onClick={() => handleLinkClick("/team-building")}>
@@ -98,10 +119,21 @@ function Nav() {
 										Gift Cards
 									</a>
 								</li>
-								<li>
-									<details>
-										<summary>Info</summary>
-										<ul className="p-2 bg-primary rounded-t-none top-16">
+								<li
+									className="dropdown dropdown-hover"
+									onMouseLeave={() => setEscapeRoomDropdownOpen(false)}
+								>
+									<div
+										tabIndex={0}
+										role="button"
+										className="btn bg-base-300 border-none text-xl"
+										onClick={toggleEscapeRoomDropdown}
+										onMouseEnter={() => setEscapeRoomDropdownOpen(true)}
+									>
+										Info
+									</div>
+									{escapeRoomDropdownOpen && (
+										<ul className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box w-52">
 											<li>
 												<a onClick={() => handleLinkClick("/about")}>About</a>
 											</li>
@@ -114,7 +146,7 @@ function Nav() {
 												</a>
 											</li>
 										</ul>
-									</details>
+									)}
 								</li>
 							</ul>
 						</div>
