@@ -33,8 +33,8 @@ function Nav() {
 	};
 
 	return (
-		<div>
-			<div className="drawer-end">
+		<>
+			<div className="drawer-end fixed top-0 w-full z-10 lg:opacity-90">
 				<input
 					id="navDrawer"
 					type="checkbox"
@@ -42,7 +42,7 @@ function Nav() {
 					checked={drawer}
 					onChange={toggleDrawer}
 				/>
-				<div className="drawer-content flex flex-col">
+				<div className="drawer-content flex flex-col opacity-90">
 					<div className="w-full navbar bg-base-300 flex max-lg:flex-row-reverse justify-between">
 						<div className="flex lg:hidden">
 							<label
@@ -55,7 +55,7 @@ function Nav() {
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
 									viewBox="0 0 24 24"
-									className="inline-block w-6 h-6 stroke-current"
+									className="inline-block w-6 h-6 stroke-current text-primary"
 								>
 									<path
 										strokeLinecap="round"
@@ -67,7 +67,7 @@ function Nav() {
 							</label>
 						</div>
 						<img
-							className="md:w-56 w-32 ml-5"
+							className="md:w-56 w-32 ml-5 cursor-pointer hover:opacity-80"
 							src={logo}
 							alt="Escapeworks denver"
 							onClick={() => {
@@ -83,8 +83,11 @@ function Nav() {
 									<div
 										tabIndex={0}
 										role="button"
-										className="btn bg-base-300 border-none text-xl"
-										onClick={toggleEscapeRoomDropdown}
+										className="btn bg-base-300 border-none text-xl text-neutral hover:text-primary"
+										onClick={() => {
+											toggleEscapeRoomDropdown();
+											handleLinkClick("/all-rooms");
+										}}
 										onMouseEnter={() => setEscapeRoomDropdownOpen(true)}
 									>
 										Escape Rooms
@@ -92,17 +95,26 @@ function Nav() {
 									{escapeRoomDropdownOpen && (
 										<ul className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box w-52">
 											<li>
-												<a onClick={() => handleLinkClick("/all-rooms")}>
+												<a
+													className="text-lg hover:text-accent"
+													onClick={() => handleLinkClick("/all-rooms")}
+												>
 													All Escape Rooms
 												</a>
 											</li>
 											<li>
-												<a onClick={() => handleLinkClick("/denver-rooms")}>
+												<a
+													className="text-lg hover:text-accent"
+													onClick={() => handleLinkClick("/denver-rooms")}
+												>
 													Denver Rooms
 												</a>
 											</li>
 											<li>
-												<a onClick={() => handleLinkClick("/ballpark-rooms")}>
+												<a
+													className="text-lg hover:text-accent"
+													onClick={() => handleLinkClick("/ballpark-rooms")}
+												>
 													Ballpark Rooms
 												</a>
 											</li>
@@ -110,12 +122,18 @@ function Nav() {
 									)}
 								</li>
 								<li>
-									<a onClick={() => handleLinkClick("/team-building")}>
+									<a
+										className="text-neutral hover:text-primary"
+										onClick={() => handleLinkClick("/team-building")}
+									>
 										Team Building
 									</a>
 								</li>
 								<li>
-									<a onClick={() => handleLinkClick("gift-cards")}>
+									<a
+										className="text-neutral hover:text-primary"
+										onClick={() => handleLinkClick("gift-cards")}
+									>
 										Gift Cards
 									</a>
 								</li>
@@ -126,8 +144,11 @@ function Nav() {
 									<div
 										tabIndex={0}
 										role="button"
-										className="btn bg-base-300 border-none text-xl"
-										onClick={toggleEscapeRoomDropdown}
+										className="btn bg-base-300 border-none text-xl text-neutral hover:text-primary"
+										onClick={() => {
+											toggleEscapeRoomDropdown();
+											handleLinkClick("/about");
+										}}
 										onMouseEnter={() => setEscapeRoomDropdownOpen(true)}
 									>
 										Info
@@ -135,13 +156,26 @@ function Nav() {
 									{escapeRoomDropdownOpen && (
 										<ul className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box w-52">
 											<li>
-												<a onClick={() => handleLinkClick("/about")}>About</a>
+												<a
+													className="text-lg hover:text-accent"
+													onClick={() => handleLinkClick("/about")}
+												>
+													About
+												</a>
 											</li>
 											<li>
-												<a onClick={() => handleLinkClick("/faq")}>FAQ</a>
+												<a
+													className="text-lg hover:text-accent"
+													onClick={() => handleLinkClick("/faq")}
+												>
+													FAQ
+												</a>
 											</li>
 											<li>
-												<a onClick={() => handleLinkClick("/contact")}>
+												<a
+													className="text-lg hover:text-accent"
+													onClick={() => handleLinkClick("/contact")}
+												>
 													Contact
 												</a>
 											</li>
@@ -152,7 +186,7 @@ function Nav() {
 						</div>
 						<div className="max-lg:hidden">
 							<button
-								className="btn btn-primary text-neutral text-2xl mr-5"
+								className="btn btn-primary text-neutral text-2xl mr-5 hover:btn-accent"
 								onClick={() => {
 									bookingModal.showModal();
 									setDrawer(false);
@@ -233,7 +267,7 @@ function Nav() {
 			<dialog id="booking-modal" className="modal modal-bottom sm:modal-middle">
 				<BookingModal />
 			</dialog>
-		</div>
+		</>
 	);
 }
 
