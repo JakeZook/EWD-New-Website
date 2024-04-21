@@ -18,11 +18,56 @@ function Home() {
 			name: "Egyptian Tomb",
 			img: et,
 			desc: "You and an intrepid team of archaeologists must enter an Egyptian tomb that’s been sealed since the 1940s. Your mission? To find information on a famed archaeologist who hasn’t been seen since entering the tomb decades ago.",
-			escapeRate: 34.3,
-			recordTime: 29.07,
-			averageTime: 45.55,
+			escapeRate: 35.3,
+			recordTime: 39.32,
+			averageTime: 48.55,
 			price: 35,
 			link: "/egyptian-tomb",
+			players: 8,
+		},
+		{
+			name: "Blackbeard's Brig",
+			img: bb,
+			desc: "On the hunt for Blackbeard the Pirate, you find yourself captured by the dastardly scoundrel and thrown into the ship’s brig. Now you must escape the brig and take the helm to sail away to freedom, with your booty in tow.",
+			escapeRate: 45.8,
+			recordTime: 36.05,
+			averageTime: 54.29,
+			price: 35,
+			link: "/blackbeards-brig",
+			players: 12,
+		},
+		{
+			name: "Vampire Hunter",
+			img: vh,
+			desc: "In EscapeWorks Denver’s newest (and most immersive) game room debut, ancient evil has been awakened in a town cemetery. Those who go outside after sunset, never return home.",
+			escapeRate: 31.3,
+			recordTime: 32.48,
+			averageTime: 42.55,
+			price: 38,
+			link: "/vampire-hunter",
+			players: 8,
+		},
+		{
+			name: "Casino Heist",
+			img: ch,
+			desc: "Our Casino Heist room gives you a taste of what it’s like to be double-crossed. After months of meticulous planning, the mastermind of the heist decides to go it alone.",
+			escapeRate: 28.2,
+			recordTime: 31.1,
+			averageTime: 51.12,
+			price: 35,
+			link: "/casino-heist",
+			players: 8,
+		},
+		{
+			name: "Speakeasy",
+			img: sp,
+			desc: "Take a trip back in time to 1926, the prohibition era. While alcohol is illegal, crime is on the rise in the form of back-alley deals, police collusion, and mobsters ruling the town. You see an innocent looking flower shop, but is it really what it seems?",
+			escapeRate: 41.9,
+			recordTime: 33.38,
+			averageTime: 50.22,
+			price: 35,
+			link: "/speakeasy",
+			players: 12,
 		},
 	];
 
@@ -44,7 +89,19 @@ function Home() {
 							Do you have what it takes to solve the puzzles and escape the room
 							in time?
 						</p>
-						<button className="btn btn-primary text-2xl text-neutral hover:btn-accent">
+						<button className="btn btn-primary text-2xl hover:btn-accent">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+								fill="currentColor"
+								className="w-6 h-6"
+							>
+								<path
+									fillRule="evenodd"
+									d="M1.5 6.375c0-1.036.84-1.875 1.875-1.875h17.25c1.035 0 1.875.84 1.875 1.875v3.026a.75.75 0 0 1-.375.65 2.249 2.249 0 0 0 0 3.898.75.75 0 0 1 .375.65v3.026c0 1.035-.84 1.875-1.875 1.875H3.375A1.875 1.875 0 0 1 1.5 17.625v-3.026a.75.75 0 0 1 .374-.65 2.249 2.249 0 0 0 0-3.898.75.75 0 0 1-.374-.65V6.375Zm15-1.125a.75.75 0 0 1 .75.75v.75a.75.75 0 0 1-1.5 0V6a.75.75 0 0 1 .75-.75Zm.75 4.5a.75.75 0 0 0-1.5 0v.75a.75.75 0 0 0 1.5 0v-.75Zm-.75 3a.75.75 0 0 1 .75.75v.75a.75.75 0 0 1-1.5 0v-.75a.75.75 0 0 1 .75-.75Zm.75 4.5a.75.75 0 0 0-1.5 0V18a.75.75 0 0 0 1.5 0v-.75ZM6 12a.75.75 0 0 1 .75-.75H12a.75.75 0 0 1 0 1.5H6.75A.75.75 0 0 1 6 12Zm.75 2.25a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z"
+									clipRule="evenodd"
+								/>
+							</svg>
 							Book Now!
 						</button>
 					</div>
@@ -52,7 +109,7 @@ function Home() {
 			</div>
 			<div className="flex p-10 max-lg:flex-col-reverse max-lg:items-center">
 				<img
-					className="max-w-lg rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3"
+					className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 max-lg:hidden"
 					src={lp}
 					alt=""
 				/>
@@ -71,7 +128,24 @@ function Home() {
 						transported back to the time of prohibition and the excitement of
 						finding your way into a gangster’s speakeasy.
 					</p>
-					<button className="btn btn-primary hover:btn-accent w-56 text-2xl text-neutral mt-3">
+					<img
+						className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 lg:hidden"
+						src={lp}
+						alt=""
+					/>
+					<button className="btn btn-primary hover:btn-accent w-56 text-2xl mt-3">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							className="w-6 h-6"
+						>
+							<path
+								fillRule="evenodd"
+								d="M5.337 21.718a6.707 6.707 0 0 1-.533-.074.75.75 0 0 1-.44-1.223 3.73 3.73 0 0 0 .814-1.686c.023-.115-.022-.317-.254-.543C3.274 16.587 2.25 14.41 2.25 12c0-5.03 4.428-9 9.75-9s9.75 3.97 9.75 9c0 5.03-4.428 9-9.75 9-.833 0-1.643-.097-2.417-.279a6.721 6.721 0 0 1-4.246.997Z"
+								clipRule="evenodd"
+							/>
+						</svg>
 						Contact Us
 					</button>
 				</div>
@@ -171,7 +245,7 @@ function Home() {
 			</div>
 			<div className="flex flex-row-reverse p-10 max-lg:flex-col-reverse max-lg:items-center">
 				<img
-					className="max-w-lg rounded-lg shadow-2xl mask mask-parallelogram-2 max-lg:mask-circle max-md:mt-3"
+					className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-80 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 max-lg:hidden"
 					src={bg3}
 					alt=""
 				/>
@@ -189,14 +263,31 @@ function Home() {
 						Unsure which room to choose? Try out our room selector to find the
 						best match for your team.
 					</p>
-					<button className="btn btn-primary hover:btn-accent w-56 text-2xl text-neutral mt-3">
+					<img
+						className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-80 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 lg:hidden max-sm:hidden"
+						src={bg3}
+						alt=""
+					/>
+					<button className="btn btn-primary hover:btn-accent w-56 text-2xl mt-3">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							className="w-6 h-6"
+						>
+							<path
+								fillRule="evenodd"
+								d="M14.615 1.595a.75.75 0 0 1 .359.852L12.982 9.75h7.268a.75.75 0 0 1 .548 1.262l-10.5 11.25a.75.75 0 0 1-1.272-.71l1.992-7.302H3.75a.75.75 0 0 1-.548-1.262l10.5-11.25a.75.75 0 0 1 .913-.143Z"
+								clipRule="evenodd"
+							/>
+						</svg>
 						Choose Room
 					</button>
 				</div>
 			</div>
-			<div>
+			<div className="flex items-center flex-wrap">
 				{roomData.map((room, index) => (
-					<RoomCard key={index} data={roomData[index]} />
+					<RoomCard key={index} data={room} />
 				))}
 			</div>
 		</div>
