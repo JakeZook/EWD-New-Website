@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Nav } from "./comp/index";
+import { Nav, Footer } from "./comp/index";
 import {
 	Home,
 	AllRooms,
@@ -29,6 +29,7 @@ const App = () => {
 				<Route path="/faq" element={<Faq />} />
 				<Route path="/contact" element={<Contact />} />
 			</Routes>
+			<Footer />
 		</Router>
 	);
 };
