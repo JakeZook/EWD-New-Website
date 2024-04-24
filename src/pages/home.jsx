@@ -1,12 +1,12 @@
 import React from "react";
+import { TypeAnimation } from "react-type-animation";
 
 import bg1 from "../assets/ewd_background_1.jpg";
 import bg2 from "../assets/ewd_background_2.jpg";
 import bg3 from "../assets/ewd_background_3.jpg";
 import lp from "../assets/ewd-lp.jpg";
 
-import { RoomCard, RoomCardDesktop } from "../comp/index";
-import roomData from "../comp/roomData";
+import { RoomCard, RoomCardDesktop, roomData, Reviews } from "../comp/index";
 
 function Home() {
 	return (
@@ -24,8 +24,19 @@ function Home() {
 							Can you escape?
 						</h1>
 						<p className="mb-5 text-2xl text-neutral">
-							Do you have what it takes to solve the puzzles and escape the room
-							in time?
+							<TypeAnimation
+								sequence={[
+									"Do you have what it takes to solve the puzzle and escape the room in time?",
+									2000,
+									"Our rooms are designed for all skill levels, beginner to advanced.",
+									2000,
+									"Race against the clock to connect hints and emerge victorious.",
+									4000,
+								]}
+								wrapper="span"
+								speed={50}
+								repeat={Infinity}
+							></TypeAnimation>
 						</p>
 						<button className="btn btn-primary text-2xl hover:btn-accent">
 							<svg
@@ -45,7 +56,7 @@ function Home() {
 					</div>
 				</div>
 			</div>
-			<div className="flex p-10 max-lg:flex-col-reverse max-lg:items-center">
+			<div className="flex p-10 max-lg:flex-col-reverse items-center">
 				<img
 					className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 max-lg:hidden"
 					src={lp}
@@ -245,6 +256,21 @@ function Home() {
 					<RoomCardDesktop data={room} index={index} />
 				</div>
 			))}
+			<div className="flex justify-center">
+				<h2 className="w-72 text-center text-primary text-5xl my-10 pb-3 border-b-8 border-b-accent border-double">
+					Testimonials
+				</h2>
+			</div>
+			<Reviews />
+			<div className="flex w-full justify-center">
+				<div className="h-20 card rounded-box place-items-center">
+					<h2 className="text-primary text-5xl">Join Our Mailing List</h2>
+				</div>
+				<div className="divider divider-horizontal">OR</div>
+				<div className="h-20 card rounded-box place-items-center">
+					<h2 className="text-primary text-5xl">Explore Our Blog</h2>
+				</div>
+			</div>
 		</div>
 	);
 }
