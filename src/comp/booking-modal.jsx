@@ -17,7 +17,7 @@ const BookingModal = () => {
 							<p>303-420-6969</p>
 
 							<div className="card-actions justify-end">
-								<button className="btn btn-accent hover:scale-110 transition-transform duration-300 ease-in-out">
+								<button className="btn btn-accent hover:scale-110 transition-transform duration-300 ease-in-out text-black">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ const BookingModal = () => {
 							<p>666-666-6666</p>
 
 							<div className="card-actions justify-end">
-								<button className="btn btn-accent hover:scale-110 transition-transform duration-300 ease-in-out">
+								<button className="btn btn-accent hover:scale-110 transition-transform duration-300 ease-in-out text-black">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
