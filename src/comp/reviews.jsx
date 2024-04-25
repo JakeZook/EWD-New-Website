@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Reviews = () => {
 	const reviewData = [
@@ -69,7 +70,13 @@ const Reviews = () => {
 	];
 
 	return (
-		<div className="pb-20">
+		<motion.div
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			viewport={{ once: true, amount: 0.5 }}
+			transition={{ duration: 1 }}
+			className="pb-20"
+		>
 			<div className="carousel w-full">
 				{reviewData.map((review, index) => (
 					<div
@@ -113,7 +120,7 @@ const Reviews = () => {
 					</div>
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

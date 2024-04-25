@@ -1,5 +1,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
+import { SocialIcon } from "react-social-icons";
 
 import bg1 from "../assets/ewd_background_1.jpg";
 import bg2 from "../assets/ewd_background_2.jpg";
@@ -34,8 +36,9 @@ function Home() {
 									4000,
 								]}
 								wrapper="span"
-								speed={50}
+								speed={60}
 								repeat={Infinity}
+								deletionSpeed={75}
 							></TypeAnimation>
 						</p>
 						<button className="btn btn-primary text-2xl hover:btn-accent">
@@ -56,7 +59,13 @@ function Home() {
 					</div>
 				</div>
 			</div>
-			<div className="flex p-10 max-lg:flex-col-reverse items-center">
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 1 }}
+				className="flex p-10 max-lg:flex-col-reverse items-center"
+			>
 				<img
 					className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 max-lg:hidden"
 					src={lp}
@@ -98,14 +107,26 @@ function Home() {
 						Contact Us
 					</button>
 				</div>
-			</div>
-			<div className="flex flex-col justify-center items-center align-center">
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 1 }}
+				className="flex flex-col justify-center items-center align-center"
+			>
 				<div className="divider divider-accent text-3xl text-primary">
 					Why Choose Us?
 				</div>
 				<h2 className="text-xl text-accent">A Whole New Experience</h2>
-			</div>
-			<div className="flex flex-row max-lg:flex-col justify-evenly py-5">
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 1 }}
+				className="flex flex-row max-lg:flex-col justify-evenly py-5"
+			>
 				<div className="flex flex-col justify-between items-center text-primary lg:pr-5 max-md:py-5 lg:border-r-2 lg:border-r-primary">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -191,8 +212,14 @@ function Home() {
 						customer experience.
 					</p>
 				</div>
-			</div>
-			<div className="flex flex-row-reverse p-10 max-lg:flex-col-reverse max-lg:items-center">
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 1 }}
+				className="flex flex-row-reverse p-10 max-lg:flex-col-reverse max-lg:items-center"
+			>
 				<img
 					className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-80 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 max-lg:hidden"
 					src={bg3}
@@ -233,19 +260,36 @@ function Home() {
 						Choose Room
 					</button>
 				</div>
-			</div>
-			<div className="flex justify-center">
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 1 }}
+				className="flex justify-center"
+			>
 				<h2 className="text-center text-primary text-nowrap text-5xl mb-5 pb-3 border-b-8 border-b-accent border-double">
 					Featured Rooms
 				</h2>
-			</div>
-			<div className="flex items-center flex-wrap lg:hidden">
-				{roomData.map((room, index) => (
-					<RoomCard key={index} data={room} />
-				))}
-			</div>
+			</motion.div>
 			{roomData.map((room, index) => (
-				<div
+				<motion.div
+					key={index}
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					viewport={{ once: true, amount: 0.5 }}
+					transition={{ duration: 1 }}
+					className="flex items-center flex-wrap lg:hidden"
+				>
+					<RoomCard data={room} />
+				</motion.div>
+			))}
+			{roomData.map((room, index) => (
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					viewport={{ once: true, amount: 1 }}
+					transition={{ duration: 0.5 }}
 					key={index}
 					className={`hidden lg:flex items-stretch justify-center mx-28 pb-10 ${
 						index === 0 || index % 2 === 0
@@ -254,23 +298,101 @@ function Home() {
 					}`}
 				>
 					<RoomCardDesktop data={room} index={index} />
-				</div>
+				</motion.div>
 			))}
-			<div className="flex justify-center">
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 1 }}
+				className="flex justify-center"
+			>
 				<h2 className="w-72 text-center text-primary text-5xl my-10 pb-3 border-b-8 border-b-accent border-double">
 					Testimonials
 				</h2>
-			</div>
+			</motion.div>
 			<Reviews />
-			<div className="flex w-full justify-center">
-				<div className="h-20 card rounded-box place-items-center">
-					<h2 className="text-primary text-5xl">Join Our Mailing List</h2>
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 1 }}
+				className="flex justify-center items-center"
+			>
+				<h2 className="w-72 text-center text-primary text-5xl my-10 pb-3 border-b-8 border-b-accent border-double">
+					Stay Connected
+				</h2>
+			</motion.div>
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				viewport={{ once: true, amount: 0.5 }}
+				transition={{ duration: 1 }}
+				className="flex justify-center items-center max-lg:flex-col pb-10"
+			>
+				<div className="flex flex-col items-center w-1/3">
+					<h5 className="text-neutral text-nowrap text-2xl pb-3">
+						Join Mailing List:
+					</h5>
+					<div className="sm:join max-sm:flex max-sm:flex-col max-sm:mb-5">
+						<label className="input input-bordered flex items-center gap-2">
+							Email
+							<input
+								type="text"
+								className="grow"
+								placeholder="name@email.com"
+							/>
+						</label>
+						<button className="btn btn-primary join-item sm:rounded-r-full hover:btn-accent">
+							Subscribe
+						</button>
+					</div>
 				</div>
-				<div className="divider divider-horizontal">OR</div>
-				<div className="h-20 card rounded-box place-items-center">
-					<h2 className="text-primary text-5xl">Explore Our Blog</h2>
+				<div className="flex flex-col items-center w-1/3 max-sm:mb-5">
+					<h5 className="text-neutral text-2xl text-center text-nowrap pb-3">
+						Explore Our Blog:
+					</h5>
+					<button className="btn btn-primary hover:btn-accent text-xl">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							className="w-6 h-6"
+						>
+							<path d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z" />
+						</svg>
+						Blog:
+					</button>
 				</div>
-			</div>
+				<div className="flex flex-col items-center w-1/3">
+					<h5 className="text-neutral text-2xl pb-3">Socials</h5>
+					<div className="flex max-sm:flex-col max-sm:items-center">
+						<SocialIcon
+							className="m-3 hover:opacity-80"
+							network="facebook"
+							url="www.facebook.com"
+							href="https://www.facebook.com/escapeworksdenver/"
+							target="_blank"
+						/>
+						<SocialIcon
+							className="m-3 hover:opacity-80"
+							network="tiktok"
+							url="www.tiktok.com"
+							bgColor="white"
+							fgColor="black"
+							href="https://www.tiktok.com/@escapeworksdenver"
+							target="_blank"
+						/>
+						<SocialIcon
+							className="m-3 hover:opacity-80"
+							network="instagram"
+							url="www.instagram.com"
+							href="https://www.instagram.com/escapeworks_denver/"
+							target="_blank"
+						/>
+					</div>
+				</div>
+			</motion.div>
 		</div>
 	);
 }
