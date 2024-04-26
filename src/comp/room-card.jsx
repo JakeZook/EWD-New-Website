@@ -19,7 +19,7 @@ const RoomCard = (props) => {
 					/>
 				</div>
 				<div className="flex flex-col justify-center items-center">
-					<h2 className="text-3xl font-bold pb-2 text-primary">
+					<h2 className="text-3xl font-bold pb-2 text-primary font-display">
 						{props.data.name}
 					</h2>
 					<div className="flex items-center mb-3">

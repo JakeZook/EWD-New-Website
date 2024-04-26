@@ -67,7 +67,7 @@ const RoomCardDesktop = (props) => {
 				</div>
 			</div>
 			<div className="flex flex-col items-center justify-evenly max-w-96">
-				<h2 className="text-5xl text-primary text-nowrap pb-3">
+				<h2 className="text-5xl text-primary text-nowrap pb-3 font-display">
 					{props.data.name}
 				</h2>
 				<div className="flex items-center">
