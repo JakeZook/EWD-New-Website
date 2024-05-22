@@ -67,9 +67,10 @@ const RoomCardDesktop = (props) => {
 				</div>
 			</div>
 			<div className="flex flex-col items-center justify-evenly max-w-96">
-				<h2 className="text-5xl text-primary text-nowrap pb-3 font-display">
+				<h2 className="text-5xl text-primary text-nowrap pb-1 font-display">
 					{props.data.name}
 				</h2>
+				<h3 className="text-primary text-2xl pb-3 font-display">{props.data.location}</h3>
 				<div className="flex items-center">
 					<div className="badge badge-accent badge-lg mr-2">
 						<svg

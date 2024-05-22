@@ -316,32 +316,36 @@ function Home() {
 				</h2>
 			</motion.div>
 			{roomData.map((room, index) => (
-				<motion.div
+				(index === 0 || index === 2 || index === 5 || index === 6) && (
+					<motion.div
 					key={index}
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					viewport={{ once: true, amount: 0.25 }}
 					transition={{ duration: 1 }}
 					className="flex items-center flex-wrap lg:hidden"
-				>
+					>
 					<RoomCard data={room} />
-				</motion.div>
-			))}
+					</motion.div>
+				)
+				))}
 			{roomData.map((room, index) => (
-				<motion.div
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					viewport={{ once: true, amount: 0.25 }}
-					transition={{ duration: 0.5 }}
-					key={index}
-					className={`hidden lg:flex items-stretch justify-center mx-28 pb-10 ${
-						index === 0 || index % 2 === 0
-							? "flex-row border-l-8 border-l-accent border-double"
-							: "flex-row-reverse border-r-8 border-r-accent border-double"
-					}`}
-				>
+				(index === 0 || index === 2 || index === 5 || index === 6) && (
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						viewport={{ once: true, amount: 0.25 }}
+						transition={{ duration: 0.5 }}
+						key={index}
+						className={`hidden lg:flex items-stretch justify-center mx-28 pb-10 ${
+							index === 0 || index % 2 === 0
+								? "flex-row border-l-8 border-l-accent border-double"
+								: "flex-row-reverse border-r-8 border-r-accent border-double"
+						}`}
+					>
 					<RoomCardDesktop data={room} index={index} />
-				</motion.div>
+					</motion.div>
+				)
 			))}
 			<motion.div
 				initial={{ opacity: 0 }}

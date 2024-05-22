@@ -96,7 +96,7 @@ function Nav() {
 										<ul className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box w-52">
 											<li>
 												<a
-													className="text-lg hover:text-accent"
+													className="text-lg hover:text-accent underline"
 													onClick={() => handleLinkClick("/all-rooms")}
 												>
 													All Escape Rooms
