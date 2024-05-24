@@ -15,6 +15,10 @@ import {
 } from "../comp/index";
 
 function Home() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	const bookingModal = document.getElementById("booking-modal");
 
 	const bookingModalRef = useRef(null);
