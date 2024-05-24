@@ -1,11 +1,9 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
 
 import bg1 from "../assets/ewd_background_1.jpg";
-import bg2 from "../assets/ewd_background_2.jpg";
-import bg3 from "../assets/ewd_background_3.jpg";
 import lp from "../assets/ewd-lp.jpg";
 
 import {
@@ -18,6 +16,26 @@ import {
 
 function Home() {
 	const bookingModal = document.getElementById("booking-modal");
+
+	const bookingModalRef = useRef(null);
+
+	useEffect(() => {
+		bookingModalRef.current = document.getElementById("booking-modal");
+	}, []);
+
+	const showModal = () => {
+		if (bookingModalRef.current) {
+			bookingModalRef.current.showModal();
+		}
+	};
+
+	const featuredRooms = [];
+
+	roomData.map((room, index) => {
+		if (index === 0 || index === 2 || index === 5 || index === 6) {
+			featuredRooms.push(room);
+		}
+	});
 
 	return (
 		<div className="bg-black max-w-max">
@@ -33,7 +51,7 @@ function Home() {
 						<h1 className="mb-5 text-5xl text-neutral font-bold font-display">
 							Can you escape?
 						</h1>
-						<p className="mb-5 text-2xl text-neutral font-display">
+						<p className="mb-8 text-2xl text-neutral font-display h-20">
 							<TypeAnimation
 								sequence={[
 									"Do you have what it takes to solve the puzzle and escape the room in time?",
@@ -50,9 +68,7 @@ function Home() {
 							></TypeAnimation>
 						</p>
 						<button
-							onClick={() => {
-								bookingModal.showModal();
-							}}
+							onClick={showModal}
 							className="btn btn-primary text-2xl hover:btn-accent"
 						>
 							<svg
@@ -315,37 +331,33 @@ function Home() {
 					Featured Rooms
 				</h2>
 			</motion.div>
-			{roomData.map((room, index) => (
-				(index === 0 || index === 2 || index === 5 || index === 6) && (
-					<motion.div
+			{featuredRooms.map((room, index) => (
+				<motion.div
 					key={index}
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					viewport={{ once: true, amount: 0.25 }}
 					transition={{ duration: 1 }}
 					className="flex items-center flex-wrap lg:hidden"
-					>
+				>
 					<RoomCard data={room} />
-					</motion.div>
-				)
-				))}
-			{roomData.map((room, index) => (
-				(index === 0 || index === 2 || index === 5 || index === 6) && (
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
-						viewport={{ once: true, amount: 0.25 }}
-						transition={{ duration: 0.5 }}
-						key={index}
-						className={`hidden lg:flex items-stretch justify-center mx-28 pb-10 ${
-							index === 0 || index % 2 === 0
-								? "flex-row border-l-8 border-l-accent border-double"
-								: "flex-row-reverse border-r-8 border-r-accent border-double"
-						}`}
-					>
+				</motion.div>
+			))}
+			{featuredRooms.map((room, index) => (
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					viewport={{ once: true, amount: 0.25 }}
+					transition={{ duration: 0.5 }}
+					key={index}
+					className={`hidden lg:flex items-stretch justify-center mx-28 pb-10 ${
+						index === 0 || index % 2 === 0
+							? "flex-row border-l-8 border-l-accent border-double"
+							: "flex-row-reverse border-r-8 border-r-accent border-double"
+					}`}
+				>
 					<RoomCardDesktop data={room} index={index} />
-					</motion.div>
-				)
+				</motion.div>
 			))}
 			<motion.div
 				initial={{ opacity: 0 }}

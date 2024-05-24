@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import logo from "../assets/logo.png";
@@ -12,6 +12,8 @@ function Nav() {
 	const [infoDropdownOpen, setInfoDropdownOpen] = useState(false);
 
 	const bookingModal = document.getElementById("booking-modal");
+
+	const bookingModalRef = useRef(null);
 
 	const handleLinkClick = (link) => {
 		navigate(`${link}`);
@@ -32,9 +34,20 @@ function Nav() {
 		setInfoDropdownOpen(!infoDropdownOpen);
 	};
 
+	useEffect(() => {
+		bookingModalRef.current = document.getElementById("booking-modal");
+	}, []);
+
+	const showModal = () => {
+		if (bookingModalRef.current) {
+			bookingModalRef.current.showModal();
+			setDrawer(false);
+		}
+	};
+
 	return (
 		<>
-			<div className="drawer-end fixed top-0 w-full z-10 lg:opacity-90">
+			<div className="drawer-end fixed top-0 w-full z-10 lg:opacity-100">
 				<input
 					id="navDrawer"
 					type="checkbox"
@@ -43,7 +56,7 @@ function Nav() {
 					onChange={toggleDrawer}
 				/>
 				<div className="drawer-content flex flex-col opacity-90">
-					<div className="w-full navbar bg-base-300 flex max-lg:flex-row-reverse justify-between">
+					<div className="w-full navbar bg-black flex max-lg:flex-row-reverse justify-between">
 						<div className="flex lg:hidden">
 							<label
 								htmlFor="navDrawer"
@@ -83,7 +96,7 @@ function Nav() {
 									<div
 										tabIndex={0}
 										role="button"
-										className="btn bg-base-300 border-none text-xl text-neutral hover:text-primary"
+										className="btn bg-black border-none text-xl text-neutral hover:text-primary"
 										onClick={() => {
 											toggleEscapeRoomDropdown();
 											handleLinkClick("/all-rooms");
@@ -96,7 +109,7 @@ function Nav() {
 										<ul className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box w-52">
 											<li>
 												<a
-													className="text-lg hover:text-accent underline"
+													className="text-lg hover:text-accent"
 													onClick={() => handleLinkClick("/all-rooms")}
 												>
 													All Escape Rooms
@@ -107,7 +120,7 @@ function Nav() {
 													className="text-lg hover:text-accent"
 													onClick={() => handleLinkClick("/denver-rooms")}
 												>
-													Denver Rooms
+													Convention Center
 												</a>
 											</li>
 											<li>
@@ -115,7 +128,7 @@ function Nav() {
 													className="text-lg hover:text-accent"
 													onClick={() => handleLinkClick("/ballpark-rooms")}
 												>
-													Ballpark Rooms
+													Ballpark
 												</a>
 											</li>
 										</ul>
@@ -144,7 +157,7 @@ function Nav() {
 									<div
 										tabIndex={0}
 										role="button"
-										className="btn bg-base-300 border-none text-xl text-neutral hover:text-primary"
+										className="btn bg-black border-none text-xl text-neutral hover:text-primary"
 										onClick={() => {
 											toggleEscapeRoomDropdown();
 											handleLinkClick("/about");
@@ -187,10 +200,7 @@ function Nav() {
 						<div className="max-lg:hidden">
 							<button
 								className="btn btn-primary text-2xl mr-5 hover:btn-accent"
-								onClick={() => {
-									bookingModal.showModal();
-									setDrawer(false);
-								}}
+								onClick={showModal}
 							>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +225,7 @@ function Nav() {
 						aria-label="close sidebar"
 						className="drawer-overlay"
 					></label>
-					<ul className="menu p-4 md:w-80 max-sm:w-60 min-h-full bg-base-200 text-neutral text-xl">
+					<ul className="menu p-4 md:w-80 max-sm:w-60 min-h-full bg-black text-neutral text-xl">
 						<li>
 							<details>
 								<summary>Escape Rooms</summary>
@@ -227,7 +237,7 @@ function Nav() {
 									</li>
 									<li>
 										<a onClick={() => handleLinkClick("/denver-rooms")}>
-											Denver
+											Convention
 										</a>
 									</li>
 									<li>
