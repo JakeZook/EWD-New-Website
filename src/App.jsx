@@ -12,6 +12,7 @@ import {
 	Faq,
 	GiftCards,
 	TeamBuilding,
+	RoomSelector,
 } from "./pages/index";
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
 				<Route path="/about" element={<About />} />
 				<Route path="/faq" element={<Faq />} />
 				<Route path="/contact" element={<Contact />} />
+				<Route path="/room-selector" element={<RoomSelector />} />
 			</Routes>
 			<Footer />
 		</Router>

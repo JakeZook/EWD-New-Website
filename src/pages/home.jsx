@@ -395,10 +395,10 @@ function Home() {
 			>
 				<div className="flex flex-col items-center w-1/3">
 					<h5 className="text-neutral text-nowrap text-2xl pb-3 font-display">
-						Join Mailing List:
+						Join Mailing List
 					</h5>
 					<div className="sm:join max-sm:flex max-sm:flex-col max-sm:mb-5">
-						<label className="input input-bordered flex items-center gap-2">
+						<label className="bg-black input input-bordered border-primary flex items-center gap-2 text-primary">
 							Email
 							<input
 								type="text"
@@ -413,7 +413,7 @@ function Home() {
 				</div>
 				<div className="flex flex-col items-center w-1/3 max-sm:mb-5">
 					<h5 className="text-neutral text-2xl text-center text-nowrap pb-3 font-display">
-						Explore Our Blog:
+						Explore Our Blog
 					</h5>
 					<button className="btn btn-primary hover:btn-accent text-xl">
 						<svg

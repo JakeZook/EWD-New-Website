@@ -5,6 +5,7 @@ import bb from "../assets/bb.jpg";
 import vh from "../assets/vh.jpg";
 import sw from "../assets/sw.png";
 import ex from "../assets/ex.png";
+import wa from "../assets/wa.jpg";
 
 const roomData = [
 	{
@@ -17,7 +18,9 @@ const roomData = [
 		price: 35,
 		link: "/egyptian-tomb",
 		players: 8,
-		location: "Convention Center"
+		location: "Convention Center",
+		points: 0,
+		appeals: ["kids", "Small Groups", "Beginners"],
 	},
 	{
 		name: "Blackbeard's Brig",
@@ -29,7 +32,9 @@ const roomData = [
 		price: 35,
 		link: "/blackbeards-brig",
 		players: 12,
-		location: "Convention Center"
+		location: "Convention Center",
+		points: 0,
+		appeals: ["kids", "Large Groups", "Birthday Parties"],
 	},
 	{
 		name: "Vampire Hunter",
@@ -41,7 +46,9 @@ const roomData = [
 		price: 38,
 		link: "/vampire-hunter",
 		players: 8,
-		location: "Convention Center"
+		location: "Convention Center",
+		points: 0,
+		appeals: ["Experienced Players", "Small Groups", "Horror Fans"],
 	},
 	{
 		name: "Speakeasy",
@@ -53,7 +60,9 @@ const roomData = [
 		price: 35,
 		link: "/speakeasy",
 		players: 12,
-		location: "Convention Center"
+		location: "Convention Center",
+		points: 0,
+		appeals: ["Bach Parties", "Large Groups", "Familiar Players"],
 	},
 	{
 		name: "Casino Heist",
@@ -65,7 +74,9 @@ const roomData = [
 		price: 35,
 		link: "/casino-heist",
 		players: 8,
-		location: "Convention Center"
+		location: "Convention Center",
+		points: 0,
+		appeals: ["Bach Parties", "Small Groups", "Experienced Players"],
 	},
 	{
 		name: "Space Wars",
@@ -77,32 +88,38 @@ const roomData = [
 		price: 38,
 		link: "/space-wars",
 		players: 12,
-		location: "Ballpark"
+		location: "Ballpark",
+		points: 0,
+		appeals: ["Experienced Players", "Large Groups", "Sci-Fi Fans"],
 	},
 	{
 		name: "The Exorcism",
 		img: ex,
-		desc: "The Doctors and his daughter have disappeared. Rumors have it, they have succumb to demonic spirits.", 
+		desc: "The Doctors and his daughter have disappeared. Rumors have it, they have succumb to demonic spirits.",
 		escapeRate: 28.2,
 		recordTime: 31.1,
 		averageTime: 51.12,
 		price: 38,
 		link: "/the-exorcism",
 		players: 8,
-		location: "Ballpark"
+		location: "Ballpark",
+		points: 0,
+		appeals: ["Horror Fans", "Small Groups", "Familiar Players"],
 	},
-	// {
-	// 	name: "Wizard's Alley",
-	// 	img: wa,
-	// 	desc: "Your feline friend has ran away from home and into the mysterious Wizard's Alley. Be warned: sinister magic is around every corner.", 
-	// 	escapeRate: 28.2,
-	// 	recordTime: 31.1,
-	// 	averageTime: 51.12,
-	// 	price: 38,
-	// 	link: "/wizards-alley",
-	// 	players: 12,
-	// location: "Ballpark"
-	// },
+	{
+		name: "Wizard's Alley",
+		img: wa,
+		desc: "Your feline friend has ran away from home and into the mysterious Wizard's Alley. Be warned: sinister magic is around every corner.",
+		escapeRate: 28.2,
+		recordTime: 31.1,
+		averageTime: 51.12,
+		price: 38,
+		link: "/wizards-alley",
+		players: 12,
+		location: "Ballpark",
+		points: 0,
+		appeals: ["Birthday Parties", "Large Groups", "Kids"],
+	},
 ];
 
 export default roomData;

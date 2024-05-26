@@ -131,6 +131,14 @@ function Nav() {
 													Ballpark
 												</a>
 											</li>
+											<li>
+												<a
+													className="text-lg hover:text-accent"
+													onClick={() => handleLinkClick("/room-selector")}
+												>
+													Room Selector
+												</a>
+											</li>
 										</ul>
 									)}
 								</li>
@@ -242,6 +250,14 @@ function Nav() {
 									</li>
 									<li>
 										<a onClick={() => handleLinkClick("/ballpark")}>Ballpark</a>
+									</li>
+									<li>
+										<a
+											className="text-lg hover:text-accent"
+											onClick={() => handleLinkClick("/room-selector")}
+										>
+											Room Selector
+										</a>
 									</li>
 								</ul>
 							</details>

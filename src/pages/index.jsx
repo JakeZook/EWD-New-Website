@@ -7,6 +7,7 @@ import DenverRooms from "./denver-rooms";
 import Faq from "./faq";
 import GiftCards from "./gift-cards";
 import TeamBuilding from "./team-building";
+import RoomSelector from "./room-selector";
 
 export {
 	Home,
@@ -18,4 +19,5 @@ export {
 	Faq,
 	GiftCards,
 	TeamBuilding,
+	RoomSelector,
 };
