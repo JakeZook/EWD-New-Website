@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { SocialIcon } from "react-social-icons";
+import { useNavigate } from "react-router-dom";
 
 import bg1 from "../assets/ewd_background_1.jpg";
 import lp from "../assets/ewd-lp.jpg";
@@ -18,6 +19,12 @@ function Home() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+
+	const navigate = useNavigate();
+
+	const handleLinkClick = (link) => {
+		navigate(`${link}`);
+	};
 
 	const bookingModal = document.getElementById("booking-modal");
 
@@ -415,7 +422,10 @@ function Home() {
 					<h5 className="text-neutral text-2xl text-center text-nowrap pb-3 font-display">
 						Explore Our Blog
 					</h5>
-					<button className="btn btn-primary hover:btn-accent text-xl">
+					<button
+						className="btn btn-primary hover:btn-accent text-xl"
+						onClick={() => handleLinkClick("/blog")}
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"

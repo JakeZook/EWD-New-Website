@@ -22,7 +22,9 @@ const RoomCard = (props) => {
 					<h2 className="text-3xl font-bold pb-2 text-primary font-display">
 						{props.data.name}
 					</h2>
-					<h3 className="text-primary text-2xl pb-3 font-display">{props.data.location}</h3>
+					<h3 className="text-primary text-2xl pb-3 font-display">
+						{props.data.location}
+					</h3>
 					<div className="flex items-center mb-3">
 						<div className="badge badge-accent badge-md mr-2">
 							<svg

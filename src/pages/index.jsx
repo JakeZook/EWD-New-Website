@@ -8,6 +8,7 @@ import Faq from "./faq";
 import GiftCards from "./gift-cards";
 import TeamBuilding from "./team-building";
 import RoomSelector from "./room-selector";
+import Blog from "./blog";
 
 export {
 	Home,
@@ -20,4 +21,5 @@ export {
 	GiftCards,
 	TeamBuilding,
 	RoomSelector,
+	Blog,
 };

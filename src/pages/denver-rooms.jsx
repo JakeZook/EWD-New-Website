@@ -10,7 +10,7 @@ const DenverRooms = () => {
 	return (
 		<div className="bg-black pt-20 sm:pt-20 md:pt-28 lg:pt-32 xl:pt-32">
 			<header className="flex flex-col items-center justify-center mb-8">
-				<h1 className="p-5 text-5xl text-primary font-display">
+				<h1 className="p-5 text-5xl text-primary font-display text-center">
 					Convention Center
 				</h1>
 				<p className="text-2xl text-neutral text-center font-display">

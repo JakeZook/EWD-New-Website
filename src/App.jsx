@@ -13,6 +13,7 @@ import {
 	GiftCards,
 	TeamBuilding,
 	RoomSelector,
+	Blog,
 } from "./pages/index";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
 				<Route path="/faq" element={<Faq />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/room-selector" element={<RoomSelector />} />
+				<Route path="/blog" element={<Blog />} />
 			</Routes>
 			<Footer />
 		</Router>

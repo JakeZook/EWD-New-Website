@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { roomData, RoomCard, RoomCardDesktop } from "../comp";
+import { motion } from "framer-motion";
 
 const RoomSelector = () => {
 	const [location, setLocation] = useState("");
@@ -14,7 +15,10 @@ const RoomSelector = () => {
 
 		setFormSubmitted(true);
 
+		// FIler rooms based on location
 		let updatedRooms = roomData.filter((room) => room.location === location);
+
+		// Filter rooms based on number of players
 		if (numPlayers > 8) {
 			updatedRooms = updatedRooms.map((room) => {
 				if (room.players === 12) {
@@ -25,6 +29,7 @@ const RoomSelector = () => {
 			});
 			updatedRooms = updatedRooms.filter((room) => room.players !== 8);
 		} else {
+			// Keep all rooms if 8 players but prioritize smaller rooms
 			updatedRooms = updatedRooms.map((room) => {
 				if (room.players === 8) {
 					return { ...room, points: room.points + 1 };
@@ -34,6 +39,7 @@ const RoomSelector = () => {
 			});
 		}
 
+		// Filter rooms based on kids
 		if (kids) {
 			updatedRooms = updatedRooms.map((room) => {
 				if (
@@ -52,7 +58,7 @@ const RoomSelector = () => {
 			updatedRooms = updatedRooms.filter((room) => room.name !== "Speakeasy");
 		}
 
-		console.log("Experience:", experience);
+		// Filter rooms based on experience
 		if (experience <= 2) {
 			updatedRooms = updatedRooms.map((room) => {
 				if (
@@ -87,12 +93,15 @@ const RoomSelector = () => {
 			});
 		}
 
+		// Remove rooms with 0 points
 		updatedRooms = updatedRooms.filter((room) => room.points > 0);
 
+		// Sort rooms based on points
 		updatedRooms.sort((a, b) => b.points - a.points);
 		setPickedRooms(updatedRooms);
 	};
 
+	// Reset form
 	const handleBackToForm = () => {
 		setFormSubmitted(false);
 		setExperience(1);
@@ -101,10 +110,6 @@ const RoomSelector = () => {
 		setNumPlayers(1);
 		setPickedRooms([]);
 	};
-
-	useEffect(() => {
-		console.log("Picked Rooms:", pickedRooms);
-	}, [pickedRooms]);
 
 	return (
 		<div className="bg-black pt-20 sm:pt-20 md:pt-28 lg:pt-32 xl:pt-32">
@@ -187,31 +192,40 @@ const RoomSelector = () => {
 			{formSubmitted && (
 				<>
 					{pickedRooms.map((room, index) => (
-						<div key={index} className="flex items-center flex-wrap lg:hidden">
+						<motion.div
+							key={index}
+							className="flex items-center flex-wrap lg:hidden"
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							viewport={{ once: true, amount: 0.25 }}
+							transition={{ duration: 1 }}
+						>
 							<RoomCard data={room} />
-						</div>
+						</motion.div>
 					))}
 					{pickedRooms.map((room, index) => (
-						<div
+						<motion.div
 							key={index}
 							className={`hidden lg:flex items-stretch justify-center mx-28 pb-10 ${
 								index === 0 || index % 2 === 0
 									? "flex-row border-l-8 border-l-accent border-double"
 									: "flex-row-reverse border-r-8 border-r-accent border-double"
 							}`}
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1 }}
+							viewport={{ once: true, amount: 0.25 }}
+							transition={{ duration: 1 }}
 						>
 							<RoomCardDesktop data={room} index={index} />
-						</div>
+						</motion.div>
 					))}
 					<div className="flex justify-center mb-5">
-						<div
-							className="btn btn-primary btn-lg"
-							onClick={() => {
-								handleBackToForm();
-							}}
+						<button
+							className="btn btn-primary hover:btn-accent w-56 text-2xl mt-3"
+							onClick={handleBackToForm}
 						>
-							Choose again?
-						</div>
+							Choose Again
+						</button>
 					</div>
 				</>
 			)}
