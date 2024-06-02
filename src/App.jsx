@@ -14,6 +14,8 @@ import {
 	TeamBuilding,
 	RoomSelector,
 	Blog,
+	BookingCC,
+	BookingBP,
 } from "./pages/index";
 
 const App = () => {
@@ -32,6 +34,8 @@ const App = () => {
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/room-selector" element={<RoomSelector />} />
 				<Route path="/blog" element={<Blog />} />
+				<Route path="/booking-convention-center" element={<BookingCC />} />
+				<Route path="/booking-ballpark" element={<BookingBP />} />
 			</Routes>
 			<Footer />
 		</Router>

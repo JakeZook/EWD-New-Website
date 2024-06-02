@@ -107,7 +107,11 @@ const RoomCard = (props) => {
 					<button
 						className="btn btn-primary hover:btn-accent"
 						onClick={() => {
-							handleLinkClick("/booking");
+							if (props.data.location === "Ballpark") {
+								handleLinkClick("/booking-ballpark");
+							} else {
+								handleLinkClick("/booking-convention-center");
+							}
 						}}
 					>
 						<svg

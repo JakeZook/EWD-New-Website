@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const BookingModal = () => {
+	const navigation = useNavigate();
+
+	const handleLinkClicked = (link) => {
+		navigation(`${link}`);
+	};
+
 	return (
 		<div className="modal-box max-h-[100vh] pt-0.5">
 			<div className="modal-action justify-center m-0 mb-1">
@@ -17,7 +24,12 @@ const BookingModal = () => {
 							<p>303-420-6969</p>
 
 							<div className="card-actions justify-end">
-								<button className="btn btn-accent hover:scale-110 transition-transform duration-300 ease-in-out text-black">
+								<button
+									className="btn btn-accent hover:scale-110 transition-transform duration-300 ease-in-out text-black"
+									onClick={() =>
+										handleLinkClicked("/booking-convention-center")
+									}
+								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
@@ -47,7 +59,10 @@ const BookingModal = () => {
 							<p>666-666-6666</p>
 
 							<div className="card-actions justify-end">
-								<button className="btn btn-accent hover:scale-110 transition-transform duration-300 ease-in-out text-black">
+								<button
+									className="btn btn-accent hover:scale-110 transition-transform duration-300 ease-in-out text-black"
+									onClick={() => handleLinkClicked("/booking-ballpark")}
+								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
