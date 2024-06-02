@@ -16,6 +16,7 @@ import {
 	Blog,
 	BookingCC,
 	BookingBP,
+	RoomPage,
 } from "./pages/index";
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
 				<Route path="/blog" element={<Blog />} />
 				<Route path="/booking-convention-center" element={<BookingCC />} />
 				<Route path="/booking-ballpark" element={<BookingBP />} />
+				<Route path="/rooms/:id" element={<RoomPage />} />
 			</Routes>
 			<Footer />
 		</Router>

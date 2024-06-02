@@ -11,14 +11,10 @@ const BookingCC = () => {
 		}
 	}, []);
 
+	const widgetLink = "https://bookeo.com/widget.js?a=41553NX3MAY151B2B5594B";
+
 	return (
 		<div className="bg-black pt-20 sm:pt-20 md:pt-28 lg:pt-32 xl:pt-32">
-			<Helmet>
-				<script
-					type="text/javascript"
-					src="https://bookeo.com/widget.js?a=41553NX3MAY151B2B5594B"
-				></script>
-			</Helmet>
 			<header className="flex flex-col items-center justify-center mb-8">
 				<h1 className="p-5 text-5xl text-primary font-display text-center">
 					Convention Center
@@ -51,6 +47,11 @@ const BookingCC = () => {
 					*Not valid on holidays or Team Building Events*
 				</p>
 			</header>
+			<iframe
+				src={widgetLink}
+				title="Embedded Content"
+				style={{ width: "100%", height: "100%", border: "none" }}
+			></iframe>
 		</div>
 	);
 };

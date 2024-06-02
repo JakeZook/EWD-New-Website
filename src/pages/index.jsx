@@ -11,6 +11,7 @@ import RoomSelector from "./room-selector";
 import Blog from "./blog";
 import BookingCC from "./booking-cc";
 import BookingBP from "./booking-bp";
+import RoomPage from "./room-page";
 
 export {
 	Home,
@@ -26,4 +27,5 @@ export {
 	Blog,
 	BookingCC,
 	BookingBP,
+	RoomPage,
 };
