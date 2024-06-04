@@ -48,9 +48,14 @@ const BookingCC = () => {
 				</p>
 			</header>
 			<iframe
-				src={widgetLink}
-				title="Embedded Content"
-				style={{ width: "100%", height: "100%", border: "none" }}
+				src="/cc-booking.html"
+				style={{
+					width: "100%",
+					height: "600px",
+					border: "none",
+					overflow: "visible",
+				}}
+				title="Booking Widget"
 			></iframe>
 		</div>
 	);
