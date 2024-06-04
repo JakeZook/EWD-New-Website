@@ -11,8 +11,6 @@ const BookingCC = () => {
 		}
 	}, []);
 
-	const widgetLink = "https://bookeo.com/widget.js?a=41553NX3MAY151B2B5594B";
-
 	return (
 		<div className="bg-black pt-20 sm:pt-20 md:pt-28 lg:pt-32 xl:pt-32">
 			<header className="flex flex-col items-center justify-center mb-8">
