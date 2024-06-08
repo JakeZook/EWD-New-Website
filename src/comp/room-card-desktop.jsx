@@ -111,6 +111,14 @@ const RoomCardDesktop = (props) => {
 					</div>
 				</div>
 				<p className="text-center text-xl">{props.data.desc}</p>
+				{props.data.disclaimer && (
+					<aside className="bg-accent m-3 p-3">
+						<h2 className="text-center text-primary text-lg">DISCLAIMER:</h2>
+						<p className="text-center text-neutral text-md">
+							{props.data.disclaimer}
+						</p>
+					</aside>
+				)}
 				<div className="flex flex-row my-5 justify-center">
 					<div className="mx-3 flex flex-col items-center justify-center">
 						<p className="text-primary text-center">Escape Rate:</p>

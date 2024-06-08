@@ -152,10 +152,22 @@ const roomData = [
 		averageTime: 51.12,
 		price: 38,
 		link: "/rooms/space-wars",
+		booking: "/sw-booking.html",
 		players: 12,
 		location: "Ballpark",
 		points: 0,
 		appeals: ["Experienced Players", "Large Groups", "Sci-Fi Fans"],
+		longDesc: [
+			"Space Wars is a thrilling and immersive experience that will transport you to a galaxy far, far away. Board an imperial ship, free the rebel heros, and destroy the ship before it can launch it's attack.",
+			"Space Wars is perfect for larger groups and fans of the iconic series. This rooms features multiple references and immersive puzzles unlike any other escape room.",
+			"This room will require your group to split up into two groups! One team is prisoned aboard the imperial ship and the other team must board and rescue them!",
+		],
+		facts: [
+			"The first Star Wars movie was released in 1977",
+			"The original Star Wars movie was filmed in Tunisia",
+			"The Star Wars series has grossed over $10 billion",
+			"The Star Wars series has won 7 Academy Awards",
+		],
 	},
 	{
 		name: "The Exorcism",
@@ -166,10 +178,24 @@ const roomData = [
 		averageTime: 51.12,
 		price: 38,
 		link: "/rooms/the-exorcism",
+		booking: "/ex-booking.html",
 		players: 8,
 		location: "Ballpark",
 		points: 0,
 		appeals: ["Horror Fans", "Small Groups", "Familiar Players"],
+		disclaimer:
+			"*This room features intense visuals, loud noises, and jump scares. This game is not recommend for children.*",
+		longDesc: [
+			"A doctor and his daughter have gone missing. Rumors have it that the daughter has been possessed by a demon. Has the doctor's experiments worked or will it be up to you to exorcize the demon?",
+			"The Exorcism is a dark and terrifying experience that will test your mind and spirit. This room will get your heart racing and your mind working. This room is not for the faint of heart.",
+			"Perfect for horror fans, this room will have you on the edge of your seat. The Exorcism is not recommended for children.",
+		],
+		facts: [
+			"The Exorcist was released in 1973",
+			"The first exorcism was performed in 1619",
+			"A exorcism typically takes 1-3 days",
+			"Exorcisms are performed by many religions",
+		],
 	},
 	{
 		name: "Wizard's Alley",
@@ -180,10 +206,22 @@ const roomData = [
 		averageTime: 51.12,
 		price: 38,
 		link: "/rooms/wizards-alley",
+		booking: "/wa-booking.html",
 		players: 12,
 		location: "Ballpark",
 		points: 0,
 		appeals: ["Birthday Parties", "Large Groups", "Kids"],
+		longDesc: [
+			"The Wizard's Alley is a magical and whimsical experience that will transport you to a world of wonder and mystery. This rooms is perfect for kids and families.",
+			"One of EscapeWorks largest escape rooms, Wizard's Alley features multiple spaces and various unique puzzles that will excite and surprise you.",
+			"Wizard's Alley features a variety of references to the popular fantasy series and is perfect for fans of the genre.",
+		],
+		facts: [
+			"The first Harry Potter book was released in 1997 and the first movie in 2001",
+			"The Harry Potter series has sold over 500 million copies",
+			"The Harry Potter series has been translated into 80 languages",
+			"The Harry Potter series has grossed over $7.7 billion",
+		],
 	},
 ];
 

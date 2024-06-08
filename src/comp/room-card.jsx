@@ -59,6 +59,14 @@ const RoomCard = (props) => {
 						</div>
 					</div>
 					<p className="text-sm text-center my-5 px-2">{props.data.desc}</p>
+					{props.data.disclaimer && (
+						<aside className="bg-accent m-3 p-3">
+							<h2 className="text-center text-primary text-lg">DISCLAIMER:</h2>
+							<p className="text-center text-neutral text-md">
+								{props.data.disclaimer}
+							</p>
+						</aside>
+					)}
 				</div>
 			</div>
 			<div className="flex flex-col border-b-8 border-b-accent rounded pb-5 border-double">

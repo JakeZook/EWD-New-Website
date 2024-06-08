@@ -111,6 +111,10 @@ const RoomSelector = () => {
 		setPickedRooms([]);
 	};
 
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<div className="bg-black pt-20 sm:pt-20 md:pt-28 lg:pt-32 xl:pt-32">
 			<header className="flex flex-col items-center justify-center mb-8">
