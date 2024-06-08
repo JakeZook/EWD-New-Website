@@ -74,7 +74,7 @@ const Contact = () => {
 					{validEmail && (
 						<p className="text-error text-lg">*Please enter a valid email.</p>
 					)}
-					<label className="input input-bordered flex items-center gap-2 text-primary">
+					<label className="input input-bordered border-primary flex items-center gap-2 text-primary bg-transparent">
 						Name:
 						<input
 							type="text"
@@ -86,7 +86,7 @@ const Contact = () => {
 							}}
 						/>
 					</label>
-					<label className="input input-bordered flex items-center gap-2 text-primary">
+					<label className="input input-bordered border-primary flex items-center gap-2 text-primary bg-transparent">
 						Email:
 						<input
 							type="text"
@@ -99,7 +99,7 @@ const Contact = () => {
 						/>
 					</label>
 					<textarea
-						className="textarea w-96 max:lg-w-72 h-60 text-neutral grow"
+						className="textarea w-96 max:lg-w-72 h-60 text-neutral grow bg-transparent border-primary border-2 p-2"
 						name="message"
 						placeholder="Your message here..."
 						onChange={(e) => {
