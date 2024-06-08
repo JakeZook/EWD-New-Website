@@ -14,6 +14,8 @@ const RoomPage = () => {
 		window.scrollTo(0, 0);
 	}, []);
 
+	const calculateProgressValue = (value) => (value / 60) * 100;
+
 	return (
 		<div className="bg-black pt-20 sm:pt-20 md:pt-28 lg:pt-32 xl:pt-32">
 			<header className="flex flex-col items-center my-3">
@@ -70,6 +72,56 @@ const RoomPage = () => {
 						{room.appeals[2]}
 					</div>
 				</div>
+				<div className="flex flex-row my-5 justify-center">
+					<div className="mx-3 flex flex-col items-center justify-center">
+						<p className="text-primary text-center pb-4">Escape Rate:</p>
+						<motion.div
+							className="radial-progress bg-black-600 text-primary"
+							style={{ "--size": "5rem" }}
+							initial={{ "--value": 0 }}
+							whileInView={{
+								"--value": calculateProgressValue(room.escapeRate),
+							}}
+							transition={{ duration: 2 }}
+							viewport={{ once: true, amount: 0.25 }}
+							role="progressbar"
+						>
+							<p className="text-neutral">{room.escapeRate}%</p>
+						</motion.div>
+					</div>
+					<div className="mx-3 flex flex-col items-center justify-center">
+						<p className="text-primary text-center pb-4">Record Time:</p>
+						<motion.div
+							className="radial-progress bg-black-600 text-primary"
+							style={{ "--size": "5rem" }}
+							initial={{ "--value": 0 }}
+							whileInView={{
+								"--value": calculateProgressValue(room.recordTime),
+							}}
+							transition={{ duration: 2 }}
+							viewport={{ once: true, amount: 0.25 }}
+							role="progressbar"
+						>
+							<p className="text-neutral">{room.recordTime}%</p>
+						</motion.div>
+					</div>
+					<div className="mx-3 flex flex-col items-center justify-center">
+						<p className="text-primary text-center pb-4">Average Time:</p>
+						<motion.div
+							className="radial-progress bg-black-600 text-primary"
+							style={{ "--size": "5rem" }}
+							initial={{ "--value": 0 }}
+							whileInView={{
+								"--value": calculateProgressValue(room.averageTime),
+							}}
+							transition={{ duration: 2 }}
+							viewport={{ once: true, amount: 0.25 }}
+							role="progressbar"
+						>
+							<p className="text-neutral">{room.averageTime}%</p>
+						</motion.div>
+					</div>
+				</div>
 				<p className="text-neutral text-lg text-center px-3">{room.desc}</p>
 			</aside>
 			<aside className="hidden lg:flex items-center justify-around border-l-8 border-accent border-double">
@@ -79,7 +131,6 @@ const RoomPage = () => {
 					className="mask mask-squircle w-96"
 				/>
 				<div className="flex flex-col items-center w-1/3">
-					<p className="text-center text-xl">{room.desc}</p>
 					<div className="flex justify-evenly py-5">
 						<div className="badge badge-accent badge-md mr-2">
 							<svg
@@ -122,6 +173,57 @@ const RoomPage = () => {
 						</div>
 						<div className="badge badge-primary badge-md mx-2">
 							{room.appeals[2]}
+						</div>
+					</div>
+					<p className="text-center text-xl">{room.desc}</p>
+					<div className="flex flex-row my-5 justify-center">
+						<div className="mx-3 flex flex-col items-center justify-center">
+							<p className="text-primary text-center pb-4">Escape Rate:</p>
+							<motion.div
+								className="radial-progress bg-black-600 text-primary"
+								style={{ "--size": "5rem" }}
+								initial={{ "--value": 0 }}
+								whileInView={{
+									"--value": calculateProgressValue(room.escapeRate),
+								}}
+								transition={{ duration: 2 }}
+								viewport={{ once: true, amount: 0.25 }}
+								role="progressbar"
+							>
+								<p className="text-neutral">{room.escapeRate}%</p>
+							</motion.div>
+						</div>
+						<div className="mx-3 flex flex-col items-center justify-center">
+							<p className="text-primary text-center pb-4">Record Time:</p>
+							<motion.div
+								className="radial-progress bg-black-600 text-primary"
+								style={{ "--size": "5rem" }}
+								initial={{ "--value": 0 }}
+								whileInView={{
+									"--value": calculateProgressValue(room.recordTime),
+								}}
+								transition={{ duration: 2 }}
+								viewport={{ once: true, amount: 0.25 }}
+								role="progressbar"
+							>
+								<p className="text-neutral">{room.recordTime}%</p>
+							</motion.div>
+						</div>
+						<div className="mx-3 flex flex-col items-center justify-center">
+							<p className="text-primary text-center pb-4">Average Time:</p>
+							<motion.div
+								className="radial-progress bg-black-600 text-primary"
+								style={{ "--size": "5rem" }}
+								initial={{ "--value": 0 }}
+								whileInView={{
+									"--value": calculateProgressValue(room.averageTime),
+								}}
+								transition={{ duration: 2 }}
+								viewport={{ once: true, amount: 0.25 }}
+								role="progressbar"
+							>
+								<p className="text-neutral">{room.averageTime}%</p>
+							</motion.div>
 						</div>
 					</div>
 				</div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const RoomCard = (props) => {
 	const navigate = useNavigate();
@@ -7,6 +8,8 @@ const RoomCard = (props) => {
 	const handleLinkClick = (link) => {
 		navigate(`${link}`);
 	};
+
+	const calculateProgressValue = (value) => (value / 60) * 100;
 
 	return (
 		<div className="flex flex-col">
@@ -72,43 +75,52 @@ const RoomCard = (props) => {
 			<div className="flex flex-col border-b-8 border-b-accent rounded pb-5 border-double">
 				<div className="flex flex-row mb-5 justify-center">
 					<div className="mx-3 flex flex-col items-center justify-center">
-						<p className="text-primary text-center">Escape Rate:</p>
-						<div
-							className="radial-progress bg-secondary text-primary border-4 border-secondary"
-							style={{
-								"--value": (props.data.escapeRate / 60) * 100,
-								"--size": "5rem",
+						<p className="text-primary text-center pb-4">Escape Rate:</p>
+						<motion.div
+							className="radial-progress bg-black-600 text-primary"
+							style={{ "--size": "5rem" }}
+							initial={{ "--value": 0 }}
+							whileInView={{
+								"--value": calculateProgressValue(props.data.escapeRate),
 							}}
+							transition={{ duration: 2 }}
+							viewport={{ once: true, amount: 0.25 }}
 							role="progressbar"
 						>
-							{props.data.escapeRate}%
-						</div>
+							<p className="text-neutral">{props.data.escapeRate}%</p>
+						</motion.div>
 					</div>
 					<div className="mx-3 flex flex-col items-center justify-center">
-						<p className="text-primary text-center">Record Time:</p>
-						<div
-							className="radial-progress bg-secondary text-primary border-4 border-secondary"
-							style={{
-								"--value": (props.data.recordTime / 60) * 100,
-								"--size": "5rem",
+						<p className="text-primary text-center pb-4">Record Time:</p>
+						<motion.div
+							className="radial-progress bg-black-600 text-primary"
+							style={{ "--size": "5rem" }}
+							initial={{ "--value": 0 }}
+							whileInView={{
+								"--value": calculateProgressValue(props.data.recordTime),
 							}}
+							transition={{ duration: 2 }}
+							viewport={{ once: true, amount: 0.25 }}
 							role="progressbar"
 						>
-							{props.data.recordTime}
-						</div>
+							<p className="text-neutral">{props.data.recordTime}%</p>
+						</motion.div>
 					</div>
 					<div className="mx-3 flex flex-col items-center justify-center">
-						<p className="text-primary text-center">Average Time:</p>
-						<div
-							className="radial-progress bg-secondary text-primary border-4 border-secondary"
-							style={{
-								"--value": (props.data.averageTime / 60) * 100,
-								"--size": "5rem",
+						<p className="text-primary text-center pb-4">Average Time:</p>
+						<motion.div
+							className="radial-progress bg-black-600 text-primary"
+							style={{ "--size": "5rem" }}
+							initial={{ "--value": 0 }}
+							whileInView={{
+								"--value": calculateProgressValue(props.data.averageTime),
 							}}
+							transition={{ duration: 2 }}
+							viewport={{ once: true, amount: 0.25 }}
 							role="progressbar"
 						>
-							{props.data.averageTime}
-						</div>
+							<p className="text-neutral">{props.data.averageTime}%</p>
+						</motion.div>
 					</div>
 				</div>
 				<div className="flex justify-around">
