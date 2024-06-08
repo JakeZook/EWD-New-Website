@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from "react";
-import { Helmet } from "react-helmet";
 
 const BookingCC = () => {
 	const bookingModalRef = useRef(null);
@@ -9,6 +8,10 @@ const BookingCC = () => {
 		if (bookingModalRef.current) {
 			bookingModalRef.current.close();
 		}
+	}, []);
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
 	}, []);
 
 	return (

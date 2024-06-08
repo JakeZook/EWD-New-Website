@@ -1,4 +1,4 @@
-import react, { useRef, useState } from "react";
+import react, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 
@@ -17,6 +17,10 @@ const Contact = () => {
 	const handleLinkClick = (link) => {
 		navigate(`${link}`);
 	};
+
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 
 	const sendEmail = (e) => {
 		e.preventDefault();
