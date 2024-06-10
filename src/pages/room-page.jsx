@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { roomData } from "../comp";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const RoomPage = () => {
 	const { id } = useParams();
@@ -15,6 +16,12 @@ const RoomPage = () => {
 	}, []);
 
 	const calculateProgressValue = (value) => (value / 60) * 100;
+
+	const navigate = useNavigate();
+
+	const handleLinkClick = (link) => {
+		navigate(`${link}`);
+	};
 
 	return (
 		<div className="bg-black pt-20 sm:pt-20 md:pt-28 lg:pt-32 xl:pt-32">
@@ -267,7 +274,10 @@ const RoomPage = () => {
 				))}
 			</ul>
 			<section className="flex justify-evenly p-5">
-				<button className="btn btn-primary text-2xl hover:btn-accent">
+				<button
+					onClick={() => handleLinkClick("/all-rooms")}
+					className="btn btn-primary text-2xl hover:btn-accent"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
@@ -278,7 +288,10 @@ const RoomPage = () => {
 					</svg>
 					All Rooms
 				</button>
-				<button className="btn btn-primary text-2xl hover:btn-accent">
+				<button
+					onClick={() => handleLinkClick("/about")}
+					className="btn btn-primary text-2xl hover:btn-accent"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"

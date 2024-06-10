@@ -106,10 +106,10 @@ function Nav() {
 										Escape Rooms
 									</div>
 									{escapeRoomDropdownOpen && (
-										<ul className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box w-52">
+										<ul className="dropdown-content z-[1] menu p-2 shadow bg-black text-neutral rounded-box w-52">
 											<li>
 												<a
-													className="text-lg hover:text-accent"
+													className="text-lg hover:text-primary"
 													onClick={() => handleLinkClick("/all-rooms")}
 												>
 													All Escape Rooms
@@ -117,7 +117,7 @@ function Nav() {
 											</li>
 											<li>
 												<a
-													className="text-lg hover:text-accent"
+													className="text-lg hover:text-primary"
 													onClick={() => handleLinkClick("/convention-center")}
 												>
 													Convention Center
@@ -125,7 +125,7 @@ function Nav() {
 											</li>
 											<li>
 												<a
-													className="text-lg hover:text-accent"
+													className="text-lg hover:text-primary"
 													onClick={() => handleLinkClick("/ballpark")}
 												>
 													Ballpark
@@ -133,7 +133,7 @@ function Nav() {
 											</li>
 											<li>
 												<a
-													className="text-lg hover:text-accent"
+													className="text-lg hover:text-primary"
 													onClick={() => handleLinkClick("/room-selector")}
 												>
 													Room Selector
@@ -175,10 +175,10 @@ function Nav() {
 										Info
 									</div>
 									{escapeRoomDropdownOpen && (
-										<ul className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-box w-52">
+										<ul className="dropdown-content z-[1] menu p-2 shadow bg-black rounded-box w-52">
 											<li>
 												<a
-													className="text-lg hover:text-accent"
+													className="text-lg hover:text-primary"
 													onClick={() => handleLinkClick("/about")}
 												>
 													About
@@ -186,7 +186,7 @@ function Nav() {
 											</li>
 											<li>
 												<a
-													className="text-lg hover:text-accent"
+													className="text-lg hover:text-primary"
 													onClick={() => handleLinkClick("/faq")}
 												>
 													FAQ
@@ -194,7 +194,7 @@ function Nav() {
 											</li>
 											<li>
 												<a
-													className="text-lg hover:text-accent"
+													className="text-lg hover:text-primary"
 													onClick={() => handleLinkClick("/contact")}
 												>
 													Contact
@@ -237,7 +237,7 @@ function Nav() {
 						<li>
 							<details>
 								<summary>Escape Rooms</summary>
-								<ul className="p-2 bg-primary rounded-t-none">
+								<ul className="p-2 bg-black text-primary rounded-t-none">
 									<li>
 										<a onClick={() => handleLinkClick("/all-rooms")}>
 											All Escape Rooms
@@ -273,7 +273,7 @@ function Nav() {
 						<li>
 							<details>
 								<summary>Info</summary>
-								<ul className="p-2 bg-primary rounded-t-none">
+								<ul className="p-2 bg-black text-primary rounded-t-none">
 									<li>
 										<a onClick={() => handleLinkClick("/about")}>About</a>
 									</li>
