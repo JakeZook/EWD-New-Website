@@ -244,7 +244,7 @@ const RoomPage = () => {
 					stroke="currentColor"
 					className="lg:w-1/2 h-80 max-sm:h-48 md:w-14 text-primary"
 					initial={{ rotate: 27 }}
-					animate={{ rotate: -360 }}
+					animate={{ rotate: 360 }}
 					transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
 					style={{ position: "relative" }}
 				>
