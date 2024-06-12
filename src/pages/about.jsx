@@ -39,7 +39,7 @@ const About = () => {
 					transition={{ duration: 1 }}
 					className="flex justify-center mx-10 max-lg:flex-col items-center"
 				>
-					<aside className="flex flex-col items-center">
+					<aside className="flex flex-col items-center border-l-8 border-accent border-double pl-5">
 						<h2 className="text-5xl text-primary pb-2 mb-5 border-b-8 border-accent border-double">
 							Our Story
 						</h2>
@@ -82,7 +82,7 @@ const About = () => {
 						alt="A hallway of doors"
 						className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram-2 max-lg:mask-circle max-md:mt-3 max-lg:mb-3"
 					/>
-					<aside className="flex flex-col items-center">
+					<aside className="flex flex-col items-center border-r-8 border-accent border-double pr-5">
 						<h2 className="text-5xl text-primary pb-2 mb-5 border-b-8 border-accent border-double">
 							The Rooms
 						</h2>
@@ -116,17 +116,19 @@ const About = () => {
 					className="flex justify-center my-10"
 				>
 					<div className="flex flex-col items-center w-1/3">
-						<h5 className="text-primary text-5xl pb-3 font-display">Socials</h5>
+						<h5 className="text-primary text-5xl pb-1 mb-3 font-display  border-b-8 border-accent border-double">
+							Socials
+						</h5>
 						<div className="flex max-sm:items-center">
 							<SocialIcon
-								className="m-3 hover:opacity-80"
+								className="m-3 hover:scale-110"
 								network="facebook"
 								url="www.facebook.com"
 								href="https://www.facebook.com/escapeworksdenver/"
 								target="_blank"
 							/>
 							<SocialIcon
-								className="m-3 hover:opacity-80"
+								className="m-3 hover:scale-110"
 								network="tiktok"
 								url="www.tiktok.com"
 								bgColor="white"
@@ -135,7 +137,7 @@ const About = () => {
 								target="_blank"
 							/>
 							<SocialIcon
-								className="m-3 hover:opacity-80"
+								className="m-3 hover:scale-110"
 								network="instagram"
 								url="www.instagram.com"
 								href="https://www.instagram.com/escapeworks_denver/"

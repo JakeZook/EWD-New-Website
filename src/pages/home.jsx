@@ -445,14 +445,14 @@ function Home() {
 					<h5 className="text-neutral text-2xl pb-3 font-display">Socials</h5>
 					<div className="flex max-sm:items-center">
 						<SocialIcon
-							className="m-3 hover:opacity-80"
+							className="m-3 hover:scale-110"
 							network="facebook"
 							url="www.facebook.com"
 							href="https://www.facebook.com/escapeworksdenver/"
 							target="_blank"
 						/>
 						<SocialIcon
-							className="m-3 hover:opacity-80"
+							className="m-3 hover:scale-110"
 							network="tiktok"
 							url="www.tiktok.com"
 							bgColor="white"
@@ -461,7 +461,7 @@ function Home() {
 							target="_blank"
 						/>
 						<SocialIcon
-							className="m-3 hover:opacity-80"
+							className="m-3 hover:scale-110"
 							network="instagram"
 							url="www.instagram.com"
 							href="https://www.instagram.com/escapeworks_denver/"

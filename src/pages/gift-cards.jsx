@@ -20,21 +20,27 @@ const GiftCards = () => {
 		<div className="bg-black pt-20 sm:pt-20 md:pt-28 lg:pt-32 xl:pt-32">
 			<header className="flex flex-col items-center my-3">
 				<h1 className="text-primary font-display text-5xl py-3">Gift Cards</h1>
-				<h2 className="text-neutral font-display text-3xl ">
+				<h2 className="text-neutral font-display text-3xl text-center">
 					Give a gift of an escape
 				</h2>
 			</header>
 			<main className="mt-12 flex justify-center flex-col items-center pb-20">
 				<section className="flx flex-col items-center mb-10">
-					<h2 className="text-4xl text-primary font-display pb-5">
+					<h2 className="text-4xl text-primary font-display pb-5 text-center">
 						Please choose a location:
 					</h2>
-					<div className="flex justify-between">
-						<div className="flex flex-col items-center">
+					<div className="flex justify-between items-center max-lg:flex-col">
+						<div className="flex flex-col items-center max-lg:mb-3">
 							<h4 className="text-2xl text-accent">Convention Center</h4>
 							<p>1529 Champa St.</p>
 							<p>Denver, CO 80202</p>
-							<button className="btn btn-primary text-md hover:btn-accent btn-md mt-3">
+							<button
+								onClick={() =>
+									(window.location.href =
+										"https://bookeo.com/escapeworksdenver/buyvoucher")
+								}
+								className="btn btn-primary text-md hover:btn-accent btn-md mt-3"
+							>
 								Buy Here
 							</button>
 						</div>
@@ -55,25 +61,36 @@ const GiftCards = () => {
 					whileInView={{ opacity: 1 }}
 					viewport={{ once: true, amount: 0.25 }}
 					transition={{ duration: 1 }}
-					className="flex justify-between items-center border-r-8 border-accent border-double mx-1 mb-10"
+					className="flex justify-between items-center lg:border-r-8 lg:border-accent lg:border-double mx-5 mb-10 max-lg:flex-col"
 				>
 					<img
 						src={bg1}
 						alt="A person escaping from a locked door"
-						className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 max-lg:mb-3"
+						className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 max-lg:mb-3 max-lg:hidden"
 					/>
-					<aside className="flex flex-col items-center w-2/3">
-						<h2 className="text-primary text-4xl border-b-8 border-accent border-double pb-1 mb-3 font-display">
+					<aside className="flex flex-col items-center w-2/3 mr-3 max-lg:m-0">
+						<h2 className="text-primary text-4xl border-b-8 border-accent border-double pb-1 mb-3 font-display text-center">
 							Why buy a gift card?
 						</h2>
-						<p className="text-center px-3 text-xl pb-3">
+						<img
+							src={bg1}
+							alt="A person escaping from a locked door"
+							className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 max-lg:mb-3 lg:hidden"
+						/>
+						<p className="text-center px-3 text-xl pb-5">
 							Buying gifts for your friends and family is one of the best
 							feelings in the world. However, we all know people who are a
 							little hard to shop for. In this case, you may agonize over what
 							to get your loved one, all while worrying about how your gift will
 							be received.
 						</p>
-						<button className="btn btn-primary text-black text-xl hover:btn-accent btn-md">
+						<button
+							onClick={() =>
+								(window.location.href =
+									"https://bookeo.com/escapeworksdenver/voucher")
+							}
+							className="btn btn-primary text-black text-xl hover:btn-accent btn-md"
+						>
 							Redeem Voucher
 						</button>
 					</aside>
@@ -83,13 +100,18 @@ const GiftCards = () => {
 					whileInView={{ opacity: 1 }}
 					viewport={{ once: true, amount: 0.25 }}
 					transition={{ duration: 1 }}
-					className="flex justify-between items-center border-l-8 border-accent border-double mx-1"
+					className="flex justify-between items-center lg:border-l-8 lg:border-accent lg:border-double mx-1 ml-5 max-lg:flex-col max-lg:m-0"
 				>
-					<aside className="flex flex-col items-center w-2/3">
-						<h2 className="text-primary text-4xl border-b-8 border-accent border-double pb-1 mb-3 font-display">
+					<aside className="flex flex-col items-center w-2/3 max-lg:m-0">
+						<h2 className="text-primary text-4xl border-b-8 border-accent border-double pb-1 mb-3 font-display text-center">
 							We got you covered
 						</h2>
-						<p className="text-center px-3 text-xl pb-3">
+						<img
+							src={bg2}
+							alt="A person escaping from a locked door"
+							className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram-2 max-lg:mask-circle max-md:mt-3 max-lg:mb-3 lg:hidden"
+						/>
+						<p className="text-center px-3 text-xl pb-5 ml-3 max-lg:m-0">
 							Fortunately, EscapeWorks Denver has just the thing for you. Our
 							theme-based escape rooms offer fun, adventure, and excitement to
 							people of all skill levels and ages. We can also accommodate many
@@ -108,7 +130,7 @@ const GiftCards = () => {
 					<img
 						src={bg2}
 						alt="A person escaping from a locked door"
-						className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram-2 max-lg:mask-circle max-md:mt-3 max-lg:mb-3"
+						className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram-2 max-lg:mask-circle max-md:mt-3 max-lg:mb-3 max-lg:hidden"
 					/>
 				</motion.section>
 			</main>
