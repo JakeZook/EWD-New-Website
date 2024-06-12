@@ -66,7 +66,7 @@ const About = () => {
 					</aside>
 					<img
 						src={bg3}
-						alt="A hallway of doors"
+						alt="A hallway of doors."
 						className="sm:max-w-lg max-lg:hidden max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3"
 					/>
 				</motion.section>
@@ -79,7 +79,7 @@ const About = () => {
 				>
 					<img
 						src={bg2}
-						alt="A hallway of doors"
+						alt="A group of gears."
 						className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram-2 max-lg:mask-circle max-md:mt-3 max-lg:mb-3"
 					/>
 					<aside className="flex flex-col items-center border-r-8 border-accent border-double pr-5">

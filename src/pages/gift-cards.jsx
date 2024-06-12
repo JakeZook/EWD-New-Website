@@ -65,7 +65,7 @@ const GiftCards = () => {
 				>
 					<img
 						src={bg1}
-						alt="A person escaping from a locked door"
+						alt="A person escaping from a locked door."
 						className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 max-lg:mb-3 max-lg:hidden"
 					/>
 					<aside className="flex flex-col items-center w-2/3 mr-3 max-lg:m-0">
@@ -74,7 +74,7 @@ const GiftCards = () => {
 						</h2>
 						<img
 							src={bg1}
-							alt="A person escaping from a locked door"
+							alt="A person escaping from a locked door."
 							className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram max-lg:mask-circle max-md:mt-3 max-lg:mb-3 lg:hidden"
 						/>
 						<p className="text-center px-3 text-xl pb-5">
@@ -108,7 +108,7 @@ const GiftCards = () => {
 						</h2>
 						<img
 							src={bg2}
-							alt="A person escaping from a locked door"
+							alt="A group of players in an escape room."
 							className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram-2 max-lg:mask-circle max-md:mt-3 max-lg:mb-3 lg:hidden"
 						/>
 						<p className="text-center px-3 text-xl pb-5 ml-3 max-lg:m-0">
@@ -129,7 +129,7 @@ const GiftCards = () => {
 					</aside>
 					<img
 						src={bg2}
-						alt="A person escaping from a locked door"
+						alt="A group of players in an escape room."
 						className="sm:max-w-lg max-lg:max-w-md max-md:max-w-sm max-sm:max-w-56 rounded-lg shadow-2xl mask mask-parallelogram-2 max-lg:mask-circle max-md:mt-3 max-lg:mb-3 max-lg:hidden"
 					/>
 				</motion.section>
