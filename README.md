@@ -11,7 +11,7 @@ A react site for escapeworks denver to accomadate 2nd location.
 
 ## Deployment
 
-Apple App Store: https://ewdnew.netlify.app
+- [Deployed Link](https://ewdnew.netlify.app)
 
 ```
 
